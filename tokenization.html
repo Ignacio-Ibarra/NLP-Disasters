@@ -1,0 +1,57 @@
+<!-- $Id: tokenization.html,v 1.5 1997/10/24 22:19:37 robertm Exp $ -->
+<html>
+<head>
+<title>Treebank tokenization</title>
+</head>
+<body>
+
+<h3>Treebank tokenization</h3>
+
+Our tokenization is fairly simple:
+
+<ul>
+<li>most punctuation is split from adjoining words
+<li>double quotes (<code>"</code>) are changed to doubled single
+     forward- and backward- quotes (<code>``</code> and
+     <code>''</code>)
+<li>verb contractions and the Anglo-Saxon genitive of nouns
+     are split into their component morphemes, and each morpheme is tagged
+     separately.
+     <ul>
+       <li>Examples
+	    <samp>
+	    <ul>
+	      <li> children's --> children 's
+	      <li> parents' --> parents '
+	      <li> won't --> wo n't
+	      <li> gonna --> gon na
+	      <li> I'm --> I 'm
+	    </ul>
+	    </samp>
+     </ul>
+     This tokenization allows us to analyze each component
+     separately, so (for example) "I" can be in the subject Noun
+     Phrase while "'m" is the head of the main verb phrase.
+<li>There are some subtleties for hyphens vs. dashes, elipsis dots (...)  and
+     so on, but these often depend on the particular corpus or application
+     of the tagged data.
+<li> In parsed corpora, bracket-like characters are converted to special
+     3-letter sequences, to avoid confusion with parse brackets.  Some POS
+     taggers, such as <a href="http://www.cis.upenn.edu/~adwait">Adwait
+     Ratnaparkhi</a>'s
+     <a href="http://www.cis.upenn.edu/~adwait/statnlp.html">MXPOST</a>,
+     require this form for their input.
+     <br>
+     In other words, these tokens in POS files:
+     <samp>( ) [ ] { }</samp>
+     <br>
+     become, in parsed files:
+     <samp>-LRB- -RRB- -RSB- -RSB- -LCB- -RCB-</samp>
+     <br>(The acronyms stand for (Left|Right) (Round|Square|Curly) Bracket.)
+</ul>
+<p>
+<A href="tokenizer.sed">
+Here</A>
+is a simple sed script that does a decent enough job on most corpora,
+once the corpus has been formatted into one-sentence-per-line.
+</body></html>
