@@ -1,4 +1,4 @@
-# XGBoost Classifier
+# XGBoost Classifier . Kaggle Score : 0.69996
 
 Feature Importance: same as Random Forest
 
