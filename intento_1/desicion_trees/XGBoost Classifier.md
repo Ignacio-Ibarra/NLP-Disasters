@@ -1,27 +1,50 @@
-# XGBoost Classifier . Kaggle Score : 0.69996
+### Using a XGBoost Model we get a 0.69996 ~ 0.70977 score in Kaggle. 
 
-Feature Importance: same as Random Forest
+  - **Submit 10th was with this hiper-params**
+
+{'base_score': 0.5, 
+'booster': 'gbtree', 
+'colsample_bylevel': 1, 
+'colsample_bynode': 1, 
+'colsample_bytree': 0.5831828945697735, 
+'gamma': 0, 
+'learning_rate': 0.04360665892108603, 
+'max_delta_step': 0, 
+'max_depth': 4, 
+'min_child_weight': 1, 
+'missing': None, 
+**'n_estimators': 172**, 
+'n_jobs': 1, 
+'nthread': None, 
+**'objective': 'binary:logistic'**, 
+'random_state': 0, 
+'reg_alpha': 0, 
+'reg_lambda': 1, 
+'scale_pos_weight': 1, 
+'seed': None, 
+'silent': None, 
+'subsample': 0.8628600141530596, 
+'verbosity': 1}
+
+  - **Submit 11th was with this hiper-params:**
 
 {'base_score': 0.5,
  'booster': 'gbtree',
  'colsample_bylevel': 1,
  'colsample_bynode': 1,
- 'colsample_bytree': 0.5831828945697735,
+ 'colsample_bytree': 0.611452231634857,
  'gamma': 0,
- 'learning_rate': 0.04360665892108603,
+ 'learning_rate': 0.08087027606454467,
  'max_delta_step': 0,
- 'max_depth': 4,
+ 'max_depth': 6,
  'min_child_weight': 1,
  'missing': None,
- 'n_estimators': 172,
- 'n_jobs': 1,
- 'nthread': None,
- 'objective': 'binary:logistic',
- 'random_state': 0,
+ **'n_estimators': 111**,
+ 'nthread': 1,
+ **'objective': 'reg:logistic'**,
  'reg_alpha': 0,
  'reg_lambda': 1,
  'scale_pos_weight': 1,
- 'seed': None,
- 'silent': None,
- 'subsample': 0.8628600141530596,
+ 'seed': 0,
+ 'subsample': 0.9403659096234247,
  'verbosity': 1}
